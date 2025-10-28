@@ -3,40 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 namespace SmartGarage_Exercise
 {
-
-    /// <summary>
-    /// מייצג רובוט ניקוי חשמלי.
-    /// </summary>
-    public class CleaningRobot : IMovable, IChargeable
+    public class Drone : IMovable, IChargeable
     {
         public int BatteryPercentage { get; private set; }
 
-        public CleaningRobot(int battery)
+        public Drone(int battery)
         {
             BatteryPercentage = Math.Clamp(battery, 0, 100);
         }
 
-        public void StartCleaning()
+        public void Fly()
         {
-            Console.WriteLine("CleaningRobot started cleaning...");
+            Console.WriteLine("Drone is flying...");
         }
 
         public void ChargeBattery()
         {
-            Console.WriteLine("CleaningRobot is charging...");
+            Console.WriteLine("Drone is charging...");
             BatteryPercentage = 100;
         }
 
         public void MoveLeft()
         {
-            Console.WriteLine("CleaningRobot moved left.");
+            Console.WriteLine("Drone moved left.");
         }
 
         public void MoveRight()
         {
-            Console.WriteLine("CleaningRobot moved right.");
+            Console.WriteLine("Drone moved right.");
         }
     }
 }
